@@ -16,7 +16,7 @@ get : function(link,callback){
      httpRequest.setRequestHeader( "Cache-Control", "no-cache" );
      httpRequest.setRequestHeader( "Expires", 0 );
      httpRequest.send();
- 
+
 } ,
 
 
@@ -28,6 +28,18 @@ getJSON : function(link, callback) {
   this.get(link,function(dt){
   if (callback) callback(JSON.parse(dt));
   });
+} ,
+
+
+
+buildJSON : function (jsonData,el,func) {
+  var htmlInner = '';
+if (jsonData && jsonData.length) {
+  for (var i = 0; i < jsonData.length; i++) {
+    htmlInner += func(jsonData[i]);
+  }
+}
+document.querySelector(el).innerHTML = htmlInner;
 } ,
 
 

@@ -31,6 +31,22 @@ frequency.getJSON('assets/php/linkjson.php',function(z){
 <hr>
 
 
+<h3>BUILD JSON</h3>
+<ul id="build1">
+
+</ul>
+<pre>
+frequency.getJSON('assets/php/linkjson2.php',function(z){
+  frequency.buildJSON(z.messages,"#build1",function(x){
+return ''+x+'*';
+  });
+});
+</pre>
+
+<button type="button" onclick="run.buildJSON()">RUN</button>
+<hr>
+
+
 
 <h3>POST</h3>
 <pre>
@@ -63,6 +79,14 @@ frequency.post('assets/php/post.php','x=5&y=12',function(z){
           console.log(z);
         });
       } ,
+      buildJSON : function (){
+        frequency.getJSON('assets/php/linkjson2.php',function(z){
+          console.log(z);
+          frequency.buildJSON(z.message,"#build1",function(x){
+        return '<li>'+x+'</li>';
+          });
+        });
+      },
       post : function() {
         frequency.post('assets/php/post.php','x=5&y=12',function(z){
           console.log(z);
