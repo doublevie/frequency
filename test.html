@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+<h1 align="center">FREQUENCY JS</h1>
+
+<h3>GET</h3>
+<pre>
+frequency.get('http://google.com',function(z){
+  console.log(z);
+});
+</pre>
+<button type="button" onclick="run.first()"></button>
+
+  </body>
+
+  <script type="text/javascript">
+    var run = {
+      first: function(){
+        frequency.get('http://google.com',function(z){
+          console.log(z);
+        });
+      }
+    }
+  </script>
+</html>
