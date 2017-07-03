@@ -10,19 +10,63 @@
 
 <h3>GET</h3>
 <pre>
-frequency.get('http://google.com',function(z){
+frequency.get('assets/php/link1.php',function(z){
   console.log(z);
+  _('h3').innerText = z;
 });
 </pre>
-<button type="button" onclick="run.first()"></button>
+
+<button type="button" onclick="run.first()">RUN</button>
+<hr>
+
+<h3>GET JSON</h3>
+<pre>
+frequency.getJSON('assets/php/linkjson.php',function(z){
+  console.log(z);
+
+});
+</pre>
+
+<button type="button" onclick="run.json()">RUN</button>
+<hr>
+
+
+
+<h3>POST</h3>
+<pre>
+frequency.post('assets/php/post.php','x=5&y=12',function(z){
+  console.log(z);
+
+});
+</pre>
+
+<button type="button" onclick="run.post()">RUN</button>
+<hr>
+
+
+
 
   </body>
+<script type="text/javascript" src="frequency.js">
 
+</script>
   <script type="text/javascript">
     var run = {
       first: function(){
-        frequency.get('http://google.com',function(z){
+        frequency.get('assets/php/link1.php',function(z){
           console.log(z);
+            _('h3').innerText = z;
+        });
+      } ,
+      json :function() {
+        frequency.getJSON('assets/php/linkjson.php',function(z){
+          console.log(z);
+        });
+      } ,
+      post : function() {
+        frequency.post('assets/php/post.php','x=5&y=12',function(z){
+          console.log(z);
+
         });
       }
     }
