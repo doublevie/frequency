@@ -3,7 +3,7 @@ $data = array();
 
 
 
-for ($i=0; $i < 1500; $i++) {
+for ($i=0; $i < 3500; $i++) {
   $data['message'][] = "frequency ".$i;
 }
 

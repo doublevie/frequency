@@ -32,7 +32,7 @@ frequency.getJSON('assets/php/linkjson.php',function(z){
 
 
 <h3>BUILD JSON</h3>
-<ul id="build1">
+<ul id="build1" style="max-height:50px;overflow:auto;">
 
 </ul>
 <pre>
@@ -80,11 +80,13 @@ frequency.post('assets/php/post.php','x=5&y=12',function(z){
         });
       } ,
       buildJSON : function (){
+        var p1 = performance.now();
         frequency.getJSON('assets/php/linkjson2.php',function(z){
-          console.log(z);
           frequency.buildJSON(z.message,"#build1",function(x){
         return '<li>'+x+'</li>';
           });
+          var p2 = performance.now() , time = p2 - p1;
+          console.log('time : '+Math.round(time)+' Sec');
         });
       },
       post : function() {

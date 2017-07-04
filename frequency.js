@@ -31,6 +31,7 @@ getJSON : function(link, callback) {
 } ,
 
 
+// BUILDJSON
 
 buildJSON : function (jsonData,el,func) {
   var htmlInner = '';
@@ -39,12 +40,12 @@ if (jsonData && jsonData.length) {
     htmlInner += func(jsonData[i]);
   }
 }
-document.querySelector(el).innerHTML = htmlInner;
+_(el).innerHTML = htmlInner;
 } ,
 
 
 
-
+// POST
 post : function(link,data,callb){
   var httpRequest = new XMLHttpRequest();
   httpRequest.onload  = function () {
