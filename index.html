@@ -37,7 +37,7 @@ frequency.get('assets/php/link1.php',function(z){
 });
 </pre>
 
-<button type="button" onclick="run.first()">RUN</button>
+<button type="button" onclick="run.first()" class="btn btn-primary ">RUN</button>
 </div>
 </div>
 <div class="col-md-6">
@@ -49,7 +49,7 @@ frequency.getJSON('assets/php/linkjson.php',function(z){
 });
 </pre>
 
-<button type="button" onclick="run.json()">RUN</button>
+<button type="button" onclick="run.json()" class="btn btn-primary ">RUN</button>
 </div>
 </div>
 <div class="col-md-6">
@@ -68,7 +68,7 @@ return ''+x+'*';
 });
 </pre>
 
-<button type="button" onclick="run.buildJSON()">RUN</button>
+<button type="button" onclick="run.buildJSON()" class="btn btn-primary ">RUN</button>
 </div>
 </div>
 
@@ -82,7 +82,7 @@ frequency.post('assets/php/post.php','x=5&y=12',function(z){
 });
 </pre>
 
-<button type="button" onclick="run.post()">RUN</button>
+<button type="button" onclick="run.post()" class="btn btn-primary ">RUN</button>
 </div>
 </div>
 
@@ -96,15 +96,23 @@ frequency.post('assets/php/post.php','x=5&y=12',function(z){
 <div class="op">
 
 <h3>RELOAD PAGE </h3>
-<button type="button" name="button" onclick="frequency.reload()">reload</button>
+<button type="button" name="button" onclick="frequency.reload()" class="btn btn-primary ">reload</button>
 <pre>
 frequency.reload();
 });
 </pre>
 
+</div>
+</div>
+
+
+<div class="col-md-6">
+<div class="op">
+
+
 <h3>REDIRECTION </h3>
-<button type="button" name="button" onclick="frequency.href('http://google.com')">GOOGLE </button>
-<button type="button" name="button" onclick="frequency.href('http://google.com','400.400')">GOOGLE / NEW WINDOW</button>
+<button type="button" name="button"  class="btn btn-primary " onclick="frequency.href('http://google.com')">GOOGLE </button>
+<button type="button" name="button"  class="btn btn-primary " onclick="frequency.href('http://google.com','400.400')">GOOGLE / NEW WINDOW</button>
 <pre>
 frequency.href('http://google.com');
 frequency.href('http://google.com','800.500');
@@ -118,12 +126,12 @@ frequency.href('http://google.com','800.500');
 <div class="col-md-6">
 <div class="op">
 <h3>LOCAL IP</h3>
-<button type="button" name="button" onclick="run.ip()">GET LOCAL IP</button>
 <pre>
 frequency.localIP(function(e){
 alert('locatl IP '+e)
 });
 </pre>
+<button type="button" name="button" onclick="run.ip()" class="btn btn-primary ">GET LOCAL IP</button>
 </div>
 </div>
 
