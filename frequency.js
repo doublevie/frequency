@@ -29,9 +29,16 @@ getJSON : function(link, callback) {
   if (callback) callback(JSON.parse(dt));
   });
 } ,
+// reload page
+reload : function(){
+  window.location.reload();
+},
+//redirection
+href: function(x){
+  window.location.href = x;
+} ,
 
-
-// BUILDJSON
+// buildjson
 
 buildJSON : function (jsonData,el,func) {
   var htmlInner = '';
