@@ -46,7 +46,6 @@ frequency.get('assets/php/link1.php',function(z){
 <pre>
 frequency.getJSON('assets/php/linkjson.php',function(z){
   console.log(z);
-
 });
 </pre>
 
@@ -88,6 +87,11 @@ frequency.post('assets/php/post.php','x=5&y=12',function(z){
 </div>
 
 
+<div class="col-md-12">
+<hr>
+</div>
+
+
 <div class="col-md-6">
 <div class="op">
 
@@ -111,14 +115,27 @@ frequency.href('http://google.com','800.500');
 
 
 
+<div class="col-md-6">
+<div class="op">
+<h3>LOCAL IP</h3>
+<button type="button" name="button" onclick="run.ip()">GET LOCAL IP</button>
+<pre>
+frequency.localIP(function(e){
+alert('locatl IP '+e)
+});
+</pre>
+</div>
+</div>
+
+
+
 
 </div>
 </div>
   </body>
-<script type="text/javascript" src="frequency.js">
-
-</script>
+<script type="text/javascript" src="frequency.js"></script>
   <script type="text/javascript">
+
     var run = {
       first: function(){
         frequency.get('assets/php/link1.php',function(z){
@@ -131,6 +148,12 @@ frequency.href('http://google.com','800.500');
           console.log(z);
         });
       } ,
+      ip : function(){
+        frequency.localIP(function(e){
+        alert('locatl IP '+e)
+        });
+      },
+
       buildJSON : function (){
         var p1 = performance.now();
         frequency.getJSON('assets/php/linkjson2.php',function(z){
