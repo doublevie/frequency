@@ -2,11 +2,32 @@
 <html>
   <head>
     <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="assets/css/bootstrap.css" >
+
     <title></title>
+    <style media="screen">
+.op {
+padding: 5px;margin-top:10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: #E8EAF6;
+}
+
+pre {padding:5px ;border:1px solid rgba(0,0,0,.1);background: #fff}
+          </style>
   </head>
   <body>
 
+    <div class="container-fluid">
 <h1 align="center">FREQUENCY JS</h1>
+
+<div class="row">
+
+<div class="col-md-6">
+
+
+<div class="op">
+
 
 <h3>GET</h3>
 <pre>
@@ -17,8 +38,10 @@ frequency.get('assets/php/link1.php',function(z){
 </pre>
 
 <button type="button" onclick="run.first()">RUN</button>
-<hr>
-
+</div>
+</div>
+<div class="col-md-6">
+<div class="op">
 <h3>GET JSON</h3>
 <pre>
 frequency.getJSON('assets/php/linkjson.php',function(z){
@@ -28,7 +51,10 @@ frequency.getJSON('assets/php/linkjson.php',function(z){
 </pre>
 
 <button type="button" onclick="run.json()">RUN</button>
-<hr>
+</div>
+</div>
+<div class="col-md-6">
+<div class="op">
 
 
 <h3>BUILD JSON</h3>
@@ -44,10 +70,11 @@ return ''+x+'*';
 </pre>
 
 <button type="button" onclick="run.buildJSON()">RUN</button>
-<hr>
+</div>
+</div>
 
-
-
+<div class="col-md-6">
+<div class="op">
 <h3>POST</h3>
 <pre>
 frequency.post('assets/php/post.php','x=5&y=12',function(z){
@@ -57,11 +84,36 @@ frequency.post('assets/php/post.php','x=5&y=12',function(z){
 </pre>
 
 <button type="button" onclick="run.post()">RUN</button>
-<hr>
+</div>
+</div>
+
+
+<div class="col-md-6">
+<div class="op">
+
+<h3>RELOAD PAGE </h3>
+<button type="button" name="button" onclick="frequency.reload()">reload</button>
+<pre>
+frequency.reload();
+});
+</pre>
+
+<h3>REDIRECTION </h3>
+<button type="button" name="button" onclick="frequency.href('http://google.com')">GOOGLE </button>
+<button type="button" name="button" onclick="frequency.href('http://google.com','400.400')">GOOGLE / NEW WINDOW</button>
+<pre>
+frequency.href('http://google.com');
+frequency.href('http://google.com','800.500');
+});
+</pre>
+</div>
+</div>
 
 
 
 
+</div>
+</div>
   </body>
 <script type="text/javascript" src="frequency.js">
 
@@ -98,4 +150,7 @@ frequency.post('assets/php/post.php','x=5&y=12',function(z){
       }
     }
   </script>
+
+  <script src="assets/js/popper.min.js"  ></script>
+
 </html>

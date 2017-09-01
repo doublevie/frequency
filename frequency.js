@@ -23,23 +23,29 @@ get : function(link,callback){
 
 
 
-
+/*GetJSON*/
 getJSON : function(link, callback) {
   this.get(link,function(dt){
   if (callback) callback(JSON.parse(dt));
   });
 } ,
-// reload page
+/*reload page*/
 reload : function(){
   window.location.reload();
 },
-//redirection
-href: function(x){
-  window.location.href = x;
+/*redirection*/
+href: function(x,target){
+  if (target == undefined) {
+    window.location.href = x;
+  } else {
+    target = target.split('.');
+   window.open(x, '', 'width='+target[0]+'px,height='+target[1]+'px');
+  }
 } ,
 
-// buildjson
 
+
+/*buildjson*/
 buildJSON : function (jsonData,el,func) {
   var htmlInner = '';
 if (jsonData && jsonData.length) {
@@ -52,7 +58,7 @@ _(el).innerHTML = htmlInner;
 
 
 
-// POST
+/*POST*/
 post : function(link,data,callb){
   var httpRequest = new XMLHttpRequest();
   httpRequest.onload  = function () {
@@ -68,14 +74,7 @@ httpRequest.setRequestHeader( "Expires", 0 );
 httpRequest.send(data);
 },
 
-
-
-
 }
-
-
-
-
 
 
 
