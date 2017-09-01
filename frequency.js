@@ -75,3 +75,7 @@ httpRequest.send(data);
 function _(x) {
 return document.querySelector(x);
 }
+
+function __(x) {
+return document.querySelectorAll(x);
+}

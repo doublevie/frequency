@@ -85,6 +85,7 @@ frequency.post('assets/php/post.php','x=5&y=12',function(z){
           frequency.buildJSON(z.message,"#build1",function(x){
         return '<li>'+x+'</li>';
           });
+        //  console.log(__('li'));
           var p2 = performance.now() , time = p2 - p1;
           console.log('time : '+Math.round(time)+' Sec');
         });
