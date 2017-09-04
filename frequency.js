@@ -43,6 +43,14 @@ href: function(x,target){
   }
 } ,
 
+/*FM*/
+fm : function(n){
+  return parseFloat(n).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ');
+},
+mf : function (str) {
+  str += '';
+  return parseFloat(str.replace(',','.').replace(' ','').replace(' ','').replace(' ',''));
+},
 
 
 /*buildjson*/

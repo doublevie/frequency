@@ -15,6 +15,7 @@ padding: 5px;margin-top:10px;
 
 pre {padding:5px ;border:1px solid rgba(0,0,0,.1);background: #fff}
           </style>
+          <script type="text/javascript" src="frequency.js"></script>
   </head>
   <body>
 
@@ -135,13 +136,35 @@ alert('locatl IP '+e)
 </div>
 </div>
 
+<div class="col-md-6">
+<div class="op">
+<h3>FM</h3>
+<pre>
+frequency.fm(15200);
+</pre>
+<script type="text/javascript">
+document.write(frequency.fm(15200))
+</script>
+
+</div>
+ 
+<div class="op">
+<h3>MF</h3>
+<pre>
+frequency.mf("15 200,00");
+</pre>
+<script type="text/javascript">
+document.write(frequency.mf("15 200,00"))
+</script>
+
+</div>
+</div>
 
 
 
 </div>
 </div>
   </body>
-<script type="text/javascript" src="frequency.js"></script>
   <script type="text/javascript">
 
     var run = {
@@ -180,6 +203,9 @@ alert('locatl IP '+e)
         });
       }
     }
+
+
+
   </script>
 
   <script src="assets/js/popper.min.js"  ></script>
