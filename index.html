@@ -4,6 +4,7 @@
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="assets/css/bootstrap.css" >
+        <link rel="stylesheet" href="assets/css/hightlight.css" >
 
     <title></title>
     <style media="screen">
@@ -13,7 +14,8 @@ padding: 5px;margin-top:10px;
   background: #E8EAF6;
 }
 
-pre {padding:5px ;border:1px solid rgba(0,0,0,.1);background: #fff}
+ h3 {font-size: 18px;line-height: 22px;}
+ .btn {margin-bottom: 5px;}
           </style>
           <script type="text/javascript" src="frequency.js"></script>
   </head>
@@ -22,38 +24,36 @@ pre {padding:5px ;border:1px solid rgba(0,0,0,.1);background: #fff}
     <div class="container-fluid">
 <h1 align="center">FREQUENCY JS</h1>
 
-<div class="row">
 
-<div class="col-md-6">
+
+
 
 
 <div class="op">
 
 
 <h3>GET</h3>
-<pre>
+<pre><code class="javascript">
 frequency.get('assets/php/link1.php',function(z){
   console.log(z);
   _('h3').innerText = z;
 });
-</pre>
+</code></pre>
 
-<button type="button" onclick="run.first()" class="btn btn-primary ">RUN</button>
+<button type="button" onclick="run.first()" class="btn btn-primary btn-sm ">RUN</button>
 </div>
-</div>
-<div class="col-md-6">
+
 <div class="op">
 <h3>GET JSON</h3>
-<pre>
+<pre><code class="javascript">
 frequency.getJSON('assets/php/linkjson.php',function(z){
   console.log(z);
 });
-</pre>
+</code></pre>
 
-<button type="button" onclick="run.json()" class="btn btn-primary ">RUN</button>
+<button type="button" onclick="run.json()" class="btn btn-primary btn-sm ">RUN</button>
 </div>
-</div>
-<div class="col-md-6">
+
 <div class="op">
 
 
@@ -61,98 +61,83 @@ frequency.getJSON('assets/php/linkjson.php',function(z){
 <ul id="build1" style="max-height:50px;overflow:auto;">
 
 </ul>
-<pre>
+<pre><code class="javascript">
 frequency.getJSON('assets/php/linkjson2.php',function(z){
   frequency.buildJSON(z.messages,"#build1",function(x){
 return ''+x+'*';
   });
 });
-</pre>
+</code></pre>
 
-<button type="button" onclick="run.buildJSON()" class="btn btn-primary ">RUN</button>
-</div>
+<button type="button" onclick="run.buildJSON()" class="btn btn-primary btn-sm ">RUN</button>
 </div>
 
-<div class="col-md-6">
 <div class="op">
 <h3>POST</h3>
-<pre>
+<pre><code class="javascript">
 frequency.post('assets/php/post.php','x=5&y=12',function(z){
   console.log(z);
 
 });
-</pre>
+</code></pre>
 
-<button type="button" onclick="run.post()" class="btn btn-primary ">RUN</button>
-</div>
-</div>
-
-
-<div class="col-md-12">
-<hr>
+<button type="button" onclick="run.post()" class="btn btn-primary btn-sm ">RUN</button>
 </div>
 
-
-<div class="col-md-6">
 <div class="op">
 
 <h3>RELOAD PAGE </h3>
-<button type="button" name="button" onclick="frequency.reload()" class="btn btn-primary ">reload</button>
-<pre>
+<button type="button" name="button" onclick="frequency.reload()" class="btn btn-primary btn-sm ">reload</button>
+<pre><code class="javascript">
 frequency.reload();
-});
-</pre>
+
+</code></pre>
 
 </div>
-</div>
 
-
-<div class="col-md-6">
 <div class="op">
 
 
 <h3>REDIRECTION </h3>
-<button type="button" name="button"  class="btn btn-primary " onclick="frequency.href('http://google.com')">GOOGLE </button>
-<button type="button" name="button"  class="btn btn-primary " onclick="frequency.href('http://google.com','400.400')">GOOGLE / NEW WINDOW</button>
-<pre>
+<div>
+
+<button type="button" name="button"  class="btn btn-primary btn-sm " onclick="frequency.href('http://google.com')">GOOGLE </button>
+<button type="button" name="button"  class="btn btn-primary btn-sm " onclick="frequency.href('http://google.com','400.400')">GOOGLE / NEW WINDOW</button>
+</div>
+
+<pre><code class="javascript">
 frequency.href('http://google.com');
 frequency.href('http://google.com','800.500');
 });
-</pre>
+</code></pre>
 </div>
-</div>
 
-
-
-<div class="col-md-6">
 <div class="op">
 <h3>LOCAL IP</h3>
-<pre>
+<pre><code class="javascript">
 frequency.localIP(function(e){
 alert('locatl IP '+e)
 });
-</pre>
-<button type="button" name="button" onclick="run.ip()" class="btn btn-primary ">GET LOCAL IP</button>
-</div>
+</code></pre>
+<button type="button" name="button" onclick="run.ip()" class="btn btn-primary btn-sm ">GET LOCAL IP</button>
 </div>
 
-<div class="col-md-6">
 <div class="op">
 <h3>FM</h3>
-<pre>
+<pre><code class="javascript">
 frequency.fm(15200);
-</pre>
+</code></pre>
 <script type="text/javascript">
 document.write(frequency.fm(15200))
 </script>
 
 </div>
- 
+
 <div class="op">
 <h3>MF</h3>
-<pre>
+<pre><code class="javascript">
 frequency.mf("15 200,00");
-</pre>
+</code></pre>
 <script type="text/javascript">
 document.write(frequency.mf("15 200,00"))
 </script>
@@ -162,8 +147,7 @@ document.write(frequency.mf("15 200,00"))
 
 
 
-</div>
-</div>
+
   </body>
   <script type="text/javascript">
 
@@ -208,6 +192,14 @@ document.write(frequency.mf("15 200,00"))
 
   </script>
 
+  <script src="assets/js/highlight.pack.js"  ></script>
   <script src="assets/js/popper.min.js"  ></script>
-
+  <script src="assets/js/jquery-3.2.1.slim.min.js"  ></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+</script>
 </html>
