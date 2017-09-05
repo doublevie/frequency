@@ -2,6 +2,9 @@
 
 
 var frequency = {
+  test : function(){
+    return true;
+  }
 get : function(link,callback){
   var httpRequest = new XMLHttpRequest();
      httpRequest.onreadystatechange = function() {
