@@ -108,6 +108,12 @@ httpRequest.send(data);
         if (!ice || !ice.candidate || !ice.candidate.candidate || !ice.candidate.candidate.match(ipRegex)) return;
         ice.candidate.candidate.match(ipRegex).forEach(iterateIP);
     };
+ },
+ worker: function(link,res)  {
+ 	   var w = new Worker(link);
+   w.onmessage = function(event) {
+              res(event.data);
+          };
  }
 }
 
