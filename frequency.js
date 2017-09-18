@@ -18,6 +18,11 @@ get : function(link,callback){
      httpRequest.send();
 
 } ,
+fillForm : function(data,keysobj){
+for(key in keysobj) {
+  _('[name="'+key+'"]').value = keysobj[key];
+}
+},
 
 
 
