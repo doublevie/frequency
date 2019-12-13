@@ -145,13 +145,29 @@ document.write(frequency.mf("15 200,00"))
 </div>
 
 <div class="op">
+<h3>EAN13 BARCODE</h3>
+<pre><code class="javascript">
+// generate
+frequency.ean13();
+frequency.ean13('200');
+// last digit add
+frequency.ean13('123456789123');
+// check if valide EAN13
+let barcode = '1234567891231';
+frequency.ean13(barcode) == barcode;
+</code></pre>
+
+
+</div>
+
+<div class="op">
 <h3>WORKER</h3>
 <pre><code class="javascript">
 frequency.worker("worker.js",function(data){
   console.log(data);
 });
 </code></pre>
- 
+
 
 </div>
 

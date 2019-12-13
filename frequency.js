@@ -113,6 +113,22 @@ httpRequest.send(data);
         if (!ice || !ice.candidate || !ice.candidate.candidate || !ice.candidate.candidate.match(ipRegex)) return;
         ice.candidate.candidate.match(ipRegex).forEach(iterateIP);
     };
+ },ean13 : function(st){
+   if (st == undefined) st ='';
+   if ( st.length <= 12) {
+     var characters       = '0123456789';
+      for ( var i = st.length; i < 12; i++ ) {
+         st += characters.charAt(Math.floor(Math.random() * characters.length));
+      }
+   }
+
+   var dd = st.split('').map(function(d){return parseInt(d)}) ,mult =[1,3,1,3,1,3,1,3,1,3,1,3] ,sum=0,r = '',check ;
+for (var i = 0; i < 12; i++) {
+sum+=  dd[i] * mult[i];
+r+= dd[i];
+}
+check =  (Math.ceil(sum/10) *10) - sum;
+return r+check;
  },
  worker: function(link,res)  {
  	   var w = new Worker(link);
